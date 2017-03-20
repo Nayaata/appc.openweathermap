@@ -1,0 +1,30 @@
+<h1>Open Weather Map Forecast</h1>
+<div>
+        <div id="location_strip">
+            <div id="current_location_entry" class="weather_field permanent">
+          <span class="weather_name">
+	          CURRENT LOCATION:
+	        </span>
+            </div>
+            <div id="list">
+                <div class="field" data-lat="{{:city.coord.lat}}" data-lon="{{city.coord.lon}}">
+                    <span class="weather_name">{{city.name}} {{city.country}}</span>
+                </div>
+                <div class="field">
+                    <span class="name">{{list}}</span>
+                </div>
+                <div class="field">
+                    <span>Week temperatures: </span>
+                </div>
+                <div class="field">
+                    <span class="temp">Min: {{list.main.temp_min}} &#8451;</span>
+                </div>
+                <div class="field">
+                    <span class="temp">Max: {{list.main.temp_max}} &#8451;</span>
+                </div>
+            </div>
+        </div>
+</div>
+
+<!--{{#each weathers}}-->
+        <!--{{/each}}-->
