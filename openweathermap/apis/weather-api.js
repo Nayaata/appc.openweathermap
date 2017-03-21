@@ -1,8 +1,9 @@
 var Arrow = require('arrow'),
 	request = require('request');
 
-//model instance
-//var model = Arrow.weather;
+//model
+//var Model = Arrow.weather;
+var Model = Arrow.getModel('weather');
 
 var WeatherAPI = Arrow.API.extend({
 	group: 'weatherapi',
@@ -34,7 +35,18 @@ var WeatherAPI = Arrow.API.extend({
 		}
 		var result = request(options, callback);
 
-		resp.stream(result);
+		var newModel = Model.instance(result);
+
+		//validator
+		// newModel.save(function (err, result) {
+		// 	if (!err) {
+		// 		Arrow.logger.info(result);
+		// 	} else {
+		// 		Arrow.logger.error(error);
+		// 	}
+		// });
+
+		resp.stream(newModel);
 	}
 });
 
