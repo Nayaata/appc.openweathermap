@@ -13,9 +13,8 @@ var WeatherAPI = Arrow.API.extend({
 	model: 'weather',
 	before: 'pre_example',
 	after: 'post_example',
-	parameters: {
-		//id: {description:'the test weather id'}
-	},
+	parameters: { //id: {description:'the test weather id'}
+         },
 	action: function (req, resp, next) {
 		// invoke the model find method passing the id parameter
 		// stream the result back as response
