@@ -9,20 +9,25 @@ var WeatherAPI = Arrow.API.extend({
     model: 'weather',
     before: 'pre_example',
     after: 'post_example',
-    parameters: { //id: {description:'the test weather id'}
-    },
+    //parameters: { id: {description:'the test weather id'}},
+
     action: function (req, resp, next) {
-        // invoke the model find method passing the id parameter
-        // stream the result back as response
         //res.stream(req.model.find, req.params.id, next);
 
+        // if we would like to use current location - api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}
         var reqUrl = 'http://api.openweathermap.org/data/2.5/forecast/city?id=727011&APPID=5ff3b8a0950e28c63522e4aec0678aca',
-            model = req.model;
+            model = req.model,
+            username = "Arrow",
+            password = "12345",
+            auth = "Basic " + new Buffer(username + ":" + password).toString("base64");
 
         var options = {
             url: reqUrl,
             method: "GET",
-            json: true
+            json: true,
+            headers : {
+                "Authorization" : auth
+            }
         };
 
         request(options, function callback(error, response, body) {
@@ -31,21 +36,14 @@ var WeatherAPI = Arrow.API.extend({
             }
 
             if (!error && response.statusCode == 200) {
+                //if we don't have {json: true} in options obj, we can use:
                 //var info = JSON.parse(body);
                 //console.log(body);
+
                 var instance = model.instance(body, true);
 
-                //instance validation
-                // instance.save(function (err, result) {
-                // 	if (!err) {
-                // 		Arrow.logger.info(result);
-                // 	} else {
-                // 		Arrow.logger.error("ERROR!");
-                // 	}
-                // });
-
-                //console.log for test - uncomment
-                //console.log(instance);
+                //console.log for testing purpose - uncomment/comment
+                console.log(instance);
                 return resp.stream(model.find, instance, next);
             }
         });

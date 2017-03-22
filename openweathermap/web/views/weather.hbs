@@ -1,32 +1,27 @@
-<h1>Open Weather Map Forecast</h1>
 <div>
-        <div id="location_strip">
-            <div id="current_location_entry" class="weather_field permanent">
-          <span class="weather_name">
-	          CURRENT LOCATION:
+    <h2><strong>OpenWeatherMap</strong> | <em>Forecast</em></h2>
+    <div>
+        <div>
+          <span class="weather">
+	          CURRENT LOCATION: <span class="city"><strong>{{city.name}} {{city.country}}</strong></span>
 	        </span>
+        </div>
+        <hr>
+        <div id="city_weather">
+            <div class="coord">
+                 <span>Lat: {{city.coord.lat}} and Lon: {{city.coord.lon}}</span>
             </div>
-            <div id="list">
-                <div class="field" data-lat="{{lat}}" data-lon="{lon}}">
-                    <!--:city.name-->
-                    <span class="weather_name">{{name}} {{country}}</span>
-                </div>
-                <div class="field">
-                    <span class="name">{{list}}</span>
-                </div>
-                <div class="field">
-                    <span>Week temperatures: </span>
-                </div>
-                <div class="field">
-                    <span class="temp">Min: {{temp_min}} &#8451;</span>
-                </div>
-                <div class="field">
-                    <!--:list.main-->
-                    <span class="temp">Max: {{temp_max}} &#8451;</span>
-                </div>
+            <br>
+            <div class="week_temps">
+                <span>Week temperatures: </span>
+            </div>
+            <hr>
+            <div class="temp">
+                <span>Min: {{list.main.temp_min}} &#8451;</span>
+            </div>
+            <div class="temp">
+                <span>Max: {{list.main.temp_max}} &#8451;</span>
             </div>
         </div>
+    </div>
 </div>
-
-<!--{{#each weathers}}-->
-        <!--{{/each}}-->

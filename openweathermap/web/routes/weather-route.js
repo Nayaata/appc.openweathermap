@@ -6,15 +6,14 @@ var WeatherRoute = Arrow.Router.extend({
 	method: 'GET',
 	description: 'this is an weather web route',
 	action: function (req, resp, next) {
-		//TODO: comment that later
-		resp.render('weather');
+		//resp.render('weather');
 
-		//getAPI('api/weather);
+		//getAPI
 		req.server.getAPI('api/weatherapi', 'GET').execute({}, function(err, results) {
 			if (err) {
 				next(err);
 			} else {
-				req.log.info('weathers ' + JSON.stringify(results));
+				//req.log.info('weathers ' + results);
 				resp.render('weather', results);
 			}
 		});
