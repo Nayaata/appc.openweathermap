@@ -1,6 +1,6 @@
 var Arrow = require('arrow');
 
-var Weather = Arrow.Model.extend('weather',{
+var Weather = Arrow.createModel('weather',{ //Model.extend
 	fields: {
 		city: {
 			id: { type: Number, description: 'City ID', required: true },
@@ -18,7 +18,7 @@ var Weather = Arrow.Model.extend('weather',{
 		    }
 		}
 	},
-	connector: 'appc.arrowdb'
+	connector: 'memory' //'appc.arrowdb'
 });
 
 module.exports = Weather;

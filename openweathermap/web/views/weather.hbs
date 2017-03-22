@@ -7,20 +7,22 @@
 	        </span>
             </div>
             <div id="list">
-                <div class="field" data-lat="{{:city.coord.lat}}" data-lon="{{:city.coord.lon}}">
-                    <span class="weather_name">{{:city.name}} {{:city.country}}</span>
+                <div class="field" data-lat="{{lat}}" data-lon="{lon}}">
+                    <!--:city.name-->
+                    <span class="weather_name">{{name}} {{country}}</span>
                 </div>
                 <div class="field">
-                    <span class="name">{{:list}}</span>
+                    <span class="name">{{list}}</span>
                 </div>
                 <div class="field">
                     <span>Week temperatures: </span>
                 </div>
                 <div class="field">
-                    <span class="temp">Min: {{:list.main.temp_min}} &#8451;</span>
+                    <span class="temp">Min: {{temp_min}} &#8451;</span>
                 </div>
                 <div class="field">
-                    <span class="temp">Max: {{:list.main.temp_max}} &#8451;</span>
+                    <!--:list.main-->
+                    <span class="temp">Max: {{temp_max}} &#8451;</span>
                 </div>
             </div>
         </div>
