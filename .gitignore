@@ -1,3 +1,4 @@
 /openweathermap/node_modules
 /openweathermap/logs
 /.vscode
+/.idea
