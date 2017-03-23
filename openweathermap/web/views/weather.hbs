@@ -16,12 +16,14 @@
                 <span>Week temperatures: </span>
             </div>
             <hr>
+            {{#with list.[0]}}
             <div>
-                <span>Min: {{list.main.temp_min}} &#8451;</span>
+                <span>Min: {{main.temp_min}} K</span>
             </div>
             <div>
-                <span>Max: {{list.main.temp_max}} &#8451;</span>
+                <span>Max: {{main.temp_max}} K</span>
             </div>
+            {{/with}}
         </div>
     </div>
 </div>
