@@ -17,7 +17,7 @@ var WeatherAPI = Arrow.API.extend({
         // if we would like to use current location - api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}
         var reqUrl = 'http://api.openweathermap.org/data/2.5/forecast/city?id=727011&APPID=5ff3b8a0950e28c63522e4aec0678aca',
             model = req.model,
-            username = "Arrow",
+            username = "ArrowTest",
             password = "12345",
             auth = "Basic " + new Buffer(username + ":" + password).toString("base64");
 
@@ -43,8 +43,9 @@ var WeatherAPI = Arrow.API.extend({
                 var instance = model.instance(body, true);
 
                 //console.log for testing purpose - uncomment/comment
-                console.log(instance);
-                return resp.stream(model.find, instance, next);
+                //console.log(instance);
+
+                return resp.send(instance, null, next);
             }
         });
     }

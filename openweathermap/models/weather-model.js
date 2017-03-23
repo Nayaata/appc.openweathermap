@@ -1,6 +1,6 @@
 var Arrow = require('arrow');
 
-var Weather = Arrow.createModel('weather',{ //Model.extend
+var Weather = Arrow.createModel('weather', {
 	fields: {
 		city: {
 			id: { type: Number, description: 'City ID', required: true },
@@ -12,9 +12,9 @@ var Weather = Arrow.createModel('weather',{ //Model.extend
 			country: { type: String, description: 'Country code (GB, JP etc.)', required: true }
 		},
 		list: {
-		    main: {
-		        temp_min: { type: Number, description: 'Minimum temperature at the moment of calculation', required: true },
-		        temp_max: { type: Number, description: 'Maximum temperature at the moment of calculation', required: true }
+			main: {
+				temp_min: { type: Number, description: 'Minimum temperature at the moment of calculation', required: true },
+				temp_max: { type: Number, description: 'Maximum temperature at the moment of calculation', required: true }
 		    }
 		}
 	},
