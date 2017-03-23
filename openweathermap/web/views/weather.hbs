@@ -1,6 +1,4 @@
-<div>
-    <h2><strong>OpenWeatherMap</strong> | <em>Forecast</em></h2>
-    <div>
+<div class=".col-md-6 .col-md-offset-3">
         <div>
           <span class="weather">
 	          CURRENT LOCATION: <span class="city"><strong>{{city.name}}, {{city.country}}</strong></span>
@@ -9,21 +7,159 @@
         <hr>
         <div id="city_weather">
             <div class="coord">
-                 <span>Lat: {{city.coord.lat}} and Lon: {{city.coord.lon}}</span>
+                 <span>Lat: <strong>{{city.coord.lat}}</strong> and Lon: <strong>{{city.coord.lon}}</strong></span>
             </div>
             <br>
             <div class="week_temps">
-                <span>Week temperatures: </span>
+                <span>5 DAYS FORECAST: </span>
             </div>
             <hr>
-            {{#with list.[0]}}
-            <div>
-                <span>Min: {{main.temp_min}} K</span>
+            <div class="row">
+                <div class="col-md-15 col-xs-3">
+                    {{#with list.[0]}}
+                        <div>
+                            <span>Date: {{main.dt}} </span>
+                        </div>
+                        <div>
+                            <span> {{weather.icon}} </span>
+                        </div>
+                        <div>
+                            <span>Temp: {{main.temp}} K</span>
+                        </div>
+                        <div>
+                            <span>Min: {{main.temp_min}} K</span>
+                        </div>
+                        <div>
+                            <span>Max: {{main.temp_max}} K</span>
+                        </div>
+                        <div>
+                            <span>Humidity: {{main.humidity}} %</span>
+                        </div>
+                        <div>
+                            <span>Weather: {{weather.main}} </span>
+                        </div>
+                        <div>
+                            <span>Description: {{weather.description}} </span>
+                        </div>
+                        <hr>
+                    {{/with}}
             </div>
-            <div>
-                <span>Max: {{main.temp_max}} K</span>
+                <div class="col-md-15 col-xs-3">
+                    {{#with list.[1]}}
+                        <div>
+                            <span>Date: {{main.dt}} </span>
+                        </div>
+                        <div>
+                            <span> {{weather.icon}} </span>
+                        </div>
+                        <div>
+                            <span>Temp: {{main.temp}} K</span>
+                        </div>
+                        <div>
+                            <span>Min: {{main.temp_min}} K</span>
+                        </div>
+                        <div>
+                            <span>Max: {{main.temp_max}} K</span>
+                        </div>
+                        <div>
+                            <span>Humidity: {{main.humidity}} %</span>
+                        </div>
+                        <div>
+                            <span>Weather: {{weather.main}} </span>
+                        </div>
+                        <div>
+                            <span>Description: {{weather.description}} </span>
+                        </div>
+                        <hr>
+                    {{/with}}
+                </div>
+                <div class="col-md-15 col-xs-3">
+                    {{#with list.[2]}}
+                        <div>
+                            <span>Date: {{main.dt}} </span>
+                        </div>
+                        <div>
+                            <span> {{weather.icon}} </span>
+                        </div>
+                        <div>
+                            <span>Temp: {{main.temp}} K</span>
+                        </div>
+                        <div>
+                            <span>Min: {{main.temp_min}} K</span>
+                        </div>
+                        <div>
+                            <span>Max: {{main.temp_max}} K</span>
+                        </div>
+                        <div>
+                            <span>Humidity: {{main.humidity}} %</span>
+                        </div>
+                        <div>
+                            <span>Weather: {{weather.main}} </span>
+                        </div>
+                        <div>
+                            <span>Description: {{weather.description}} </span>
+                        </div>
+                        <hr>
+                    {{/with}}
+                </div>
+                <div class="col-md-15 col-xs-3">
+                    {{#with list.[3]}}
+                        <div>
+                            <span>Date: {{main.dt}} </span>
+                        </div>
+                        <div>
+                            <span> {{weather.icon}} </span>
+                        </div>
+                        <div>
+                            <span>Temp: {{main.temp}} K</span>
+                        </div>
+                        <div>
+                            <span>Min: {{main.temp_min}} K</span>
+                        </div>
+                        <div>
+                            <span>Max: {{main.temp_max}} K</span>
+                        </div>
+                        <div>
+                            <span>Humidity: {{main.humidity}} %</span>
+                        </div>
+                        <div>
+                            <span>Weather: {{weather.main}} </span>
+                        </div>
+                        <div>
+                            <span>Description: {{weather.description}} </span>
+                        </div>
+                        <hr>
+                    {{/with}}
+                </div>
+                <div class="col-md-15 col-xs-3">
+                    {{#with list.[4]}}
+                        <div>
+                            <span>Date: {{main.dt}} </span>
+                        </div>
+                        <div>
+                            <span> {{weather.icon}} </span>
+                        </div>
+                        <div>
+                            <span>Temp: {{main.temp}} K</span>
+                        </div>
+                        <div>
+                            <span>Min: {{main.temp_min}} K</span>
+                        </div>
+                        <div>
+                            <span>Max: {{main.temp_max}} K</span>
+                        </div>
+                        <div>
+                            <span>Humidity: {{main.humidity}} %</span>
+                        </div>
+                        <div>
+                            <span>Weather: {{weather.main}} </span>
+                        </div>
+                        <div>
+                            <span>Description: {{weather.description}} </span>
+                        </div>
+                        <hr>
+                    {{/with}}
+                </div>
             </div>
-            {{/with}}
         </div>
-    </div>
 </div>

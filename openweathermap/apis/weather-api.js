@@ -37,8 +37,7 @@ var WeatherAPI = Arrow.API.extend({
 
             if (!error && response.statusCode == 200) {
                 //if we don't have {json: true} in options obj, we can use:
-                //var info = JSON.parse(body);
-                //console.log(body);
+                //body = JSON.parse(body);
 
                 var instance = model.instance(body, true);
 

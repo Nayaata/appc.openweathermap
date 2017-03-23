@@ -7,16 +7,74 @@
     <link rel="shortcut icon" type="image/ico" href="images/favicon.ico">
     <link rel="stylesheet" type="text/css" href="styles/main.css">
     <link rel="stylesheet" href="./../../node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <script src="./../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <title>OpenWeatherMap App</title>
 </head>
 <body>
-<div>
-    <button class="btn"><a href="/weather">CURRENT WEATHER</a></button>
-    <div id="data-container">
-        <div id="data-details">
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://openweathermap.org/"><strong>OpenWeatherMap</strong>| <em>Forecast</em></a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li><a href="/weather">CURRENT WEATHER</a></li>
+                <li><a href="http://docs.appcelerator.com/platform/latest/#!/api/Arrow">ABOUT</a></li>
+                <li><a href="http://docs.appcelerator.com/platform/latest/#!/guide/API_Builder_Getting_Started">CONTACTS</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right" id="logged-out">
+                <li><a href="https://www.appcelerator.com/signup/"><span class="glyphicon glyphicon-user"> LOGIN</span></a></li>
+                <li><span href="https://www.appcelerator.com/signup/"><span class="glyphicon glyphicon-log-in"> SIGN UP</span></li>
+
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <form class="navbar-form navbar-right" role="search">
+                        <div class="form-group">
+                            <input id="search-bar" type="text" class="form-control" placeholder="Search..." onfocus="this.placeholder = ''" onblur="this.placeholder ='Search...'"/>
+                        </div>
+                    </form>
+                </li>
+                <li><a id="btn-search" class="pointer"><span class="glyphicon glyphicon-search"></span></a></li>
+            </ul>
+        </div>
     </div>
-    </div>
+</nav>
+
+<div class="container text-center" id="container">
+
 </div>
+<br>
+
+<footer class="container-fluid text-center">
+    <div class="panel panel-primary">
+        <div class="panel-heading"><strong>OpenWeatherMap</strong> | <em>Forecast</em></div>
+        <div class="panel-body">
+            <ul class="list-inline">
+                <li><a href="https://twitter.com/intent/tweet?text=Hello%20world">
+                    <button class="btn btn-twitter"><i class="fa fa-twitter"></i> | Share to Twitter</button>
+                </a>
+                </li>
+                <li><a href="https://www.facebook.com/">
+                    <button class="btn btn-facebook"><i class="fa fa-facebook"></i> | Share to Facebook</button></a>
+                    </a>
+                </li>
+                <li><a href="https://www.linkedin.com/">
+                    <button class="btn btn-linkedin"><i class="fa fa-linkedin"></i> | Share to Linkedin</button>
+                </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+<!--libs-->
+    <script src="./../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
+
+<!--<button class="btn"><a href="/weather">CURRENT WEATHER</a></button>-->

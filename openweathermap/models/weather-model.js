@@ -13,7 +13,7 @@ var Weather = Arrow.createModel('weather', {
 		},
 		list: {
 			main: {
-				dt: { type: Number, description: 'Time of data forecast', required: true },
+				dt: { type: Date, description: 'Time of data forecast', required: true },
 				temp: { type: Number, description: 'Temperature', required: true },
 				temp_min: { type: Number, description: 'Minimum temperature at the moment of calculation', required: true },
 				temp_max: { type: Number, description: 'Maximum temperature at the moment of calculation', required: true },
@@ -22,7 +22,7 @@ var Weather = Arrow.createModel('weather', {
 			weather: {
 				main: { type: String, description: 'Group of weather parameters (Rain, Snow, Extreme etc.)', required: true },
 				description: { type: String, description: 'Weather condition within the group', required: true },
-				icon: { type: Number, description: 'Weather icon id', required: true }
+				icon: { type: true, description: 'Weather icon id', required: true }
 			},
 			clouds: {
 				all: { type: Number, description: 'Cloudiness, %', required: true }
