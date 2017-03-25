@@ -35,6 +35,6 @@
     "test": "grunt"
   },
   "engines": {
-    "node": "6.10.1"
+    "node": "6.7.0"
   }
 }

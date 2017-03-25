@@ -6,19 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/ico" href="images/favicon.ico">
     <link rel="stylesheet" type="text/css" href="styles/main.css">
-    <link rel="stylesheet" href="./../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="./../../node_modules/bootstrap/dist/css/bootstrap.min.css">-->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <title>OpenWeatherMap App</title>
 </head>
 <body>
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="http://openweathermap.org/"><strong>OpenWeatherMap</strong>| <em>Forecast</em></a>
+            <!--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">-->
+                <!--<span class="icon-bar"></span>-->
+                <!--<span class="icon-bar"></span>-->
+                <!--<span class="icon-bar"></span>-->
+            <!--</button>-->
+            <a class="navbar-brand" href="http://openweathermap.org/"><strong>OpenWeatherMap</strong> | <em>Forecast</em></a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
@@ -28,7 +29,7 @@
             </ul>
             <ul class="nav navbar-nav navbar-right" id="logged-out">
                 <li><a href="https://www.appcelerator.com/signup/"><span class="glyphicon glyphicon-user"> LOGIN</span></a></li>
-                <li><span href="https://www.appcelerator.com/signup/"><span class="glyphicon glyphicon-log-in"> SIGN UP</span></li>
+                <li><a href="https://www.appcelerator.com/signup/"><span class="glyphicon glyphicon-log-in"> SIGN UP</span></a></li>
 
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -48,32 +49,31 @@
 <div class="container text-center" id="container">
 
 </div>
-<br>
 
-<footer class="container-fluid text-center">
-    <div class="panel panel-primary">
-        <div class="panel-heading"><strong>OpenWeatherMap</strong> | <em>Forecast</em></div>
-        <div class="panel-body">
-            <ul class="list-inline">
-                <li><a href="https://twitter.com/intent/tweet?text=Hello%20world">
-                    <button class="btn btn-twitter"><i class="fa fa-twitter"></i> | Share to Twitter</button>
-                </a>
-                </li>
-                <li><a href="https://www.facebook.com/">
-                    <button class="btn btn-facebook"><i class="fa fa-facebook"></i> | Share to Facebook</button></a>
-                    </a>
-                </li>
-                <li><a href="https://www.linkedin.com/">
-                    <button class="btn btn-linkedin"><i class="fa fa-linkedin"></i> | Share to Linkedin</button>
-                </a>
-                </li>
+
+<footer>
+</footer>
+<div class="copyright">
+    <div class="container">
+        <div class="col-md-6">
+            <p>© 2017 - <strong>OpenWeatherMap</strong> | <em>Forecast</em></p>
+        </div>
+        <div class="col-md-6">
+            <ul class="bottom_ul">
+                <li><a href="#">http://openweathermap.org/</a></li>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Faq's</a></li>
+                <li><a href="#">Contact us</a></li>
+                <li><a href="#">Site Map</a></li>
             </ul>
         </div>
     </div>
-</footer>
+</div>
 
 <!--libs-->
-    <script src="./../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!--<script src="./../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>-->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>
 </html>
 
