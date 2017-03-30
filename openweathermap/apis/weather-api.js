@@ -14,8 +14,9 @@ var WeatherAPI = Arrow.API.extend({
     action: function (req, resp, next) {
         //res.stream(req.model.find, req.params.id, next);
 
-        // if we would like to use current location - api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}
-        var reqUrl = 'http://api.openweathermap.org/data/2.5/forecast/city?id=727011&APPID=5ff3b8a0950e28c63522e4aec0678aca',
+        //TODO: change the URL to display forecast in Celsius just add units=metric parameter
+        // api.openweathermap.org/data/2.5/forecast/city?id=727011
+        var reqUrl = 'http://api.openweathermap.org/data/2.5/forecast/city?id=727011&units=metric&APPID=5ff3b8a0950e28c63522e4aec0678aca',
             model = req.model,
             username = "ArrowTest",
             password = "12345",
