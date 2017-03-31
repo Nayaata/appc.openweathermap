@@ -30,22 +30,20 @@ var WeatherAPI = Arrow.API.extend({
                 "Authorization" : auth
             }
         };
-
+        console.log('Got so far ...')
         request(options, function callback(error, response, body) {
             if (typeof body === "undefined") {
                 return new Error("Nothing found!");
             }
-
             if (!error && response.statusCode == 200) {
                 //if we don't have {json: true} in options obj, we can use:
                 //body = JSON.parse(body);
 
                 var instance = model.instance(body, true);
 
-                //console.log for testing purpose - uncomment/comment
-                //console.log(instance);
-
-                return resp.send(instance, null, next);
+                return resp.stream(instance, null, next);
+            }else{
+                throw new Error(body.message);
             }
         });
     }
