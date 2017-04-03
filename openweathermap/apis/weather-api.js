@@ -30,7 +30,6 @@ var WeatherAPI = Arrow.API.extend({
                 "Authorization" : auth
             }
         };
-        console.log('Got so far ...')
         request(options, function callback(error, response, body) {
             if (typeof body === "undefined") {
                 return new Error("Nothing found!");
