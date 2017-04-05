@@ -36,7 +36,8 @@ var Weather = Arrow.createModel('weather', {
 			},
 			snow: {
 				snowing: { type: Number, description: 'Snow volume for last 3 hours', name: 'snowing', required: true }
-			}
+			},
+			dt_txt: { type: String, description: 'Data/time of caluclation', required: true }
 		}
 	},
 	connector: 'memory' //'appc.arrowdb'

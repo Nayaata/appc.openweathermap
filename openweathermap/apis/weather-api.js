@@ -3,7 +3,7 @@ var Arrow = require('arrow'),
 
 var WeatherAPI = Arrow.API.extend({
     group: 'weatherapi',
-    path: '/api/weatherapi', // /:id
+    path: '/api/weatherapi',
     method: 'GET',
     description: 'this is an api that represent weather forecast',
     model: 'weather',
@@ -14,9 +14,7 @@ var WeatherAPI = Arrow.API.extend({
     action: function (req, resp, next) {
         //res.stream(req.model.find, req.params.id, next);
 
-        //TODO: change the URL to display forecast in Celsius just add units=metric parameter
-        // api.openweathermap.org/data/2.5/forecast/city?id=727011
-        var reqUrl = 'http://api.openweathermap.org/data/2.5/forecast/city?id=727011&units=metric&APPID=5ff3b8a0950e28c63522e4aec0678aca',
+        var reqUrl = 'http://api.openweathermap.org/data/2.5/forecast?id=727011&units=metric&APPID=5ff3b8a0950e28c63522e4aec0678aca',
             model = req.model,
             username = "ArrowTest",
             password = "12345",
@@ -40,8 +38,9 @@ var WeatherAPI = Arrow.API.extend({
 
                 var instance = model.instance(body, true);
 
-                return resp.stream(instance, null, next);
-            }else{
+                return resp.send(instance, null, next);
+
+            } else {
                 throw new Error(body.message);
             }
         });

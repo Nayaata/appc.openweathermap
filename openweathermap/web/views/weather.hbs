@@ -1,161 +1,116 @@
 <div style="margin: 0; padding: 0; width: 100%; height: 100%">
-        <div style="padding-top:15px; padding-bottom: 15px; width:100%; margin:0; background-color: #B31F24; color: white; text-align: center; font-size: x-large">
+    <div style="padding-top:15px; padding-bottom: 15px; width:100%; margin:0; background-color: #B31F24; color: white; text-align: center; font-size: x-large">
           <span class="weather" >
 	          CURRENT LOCATION: <span class="city"><strong>{{city.name}}, {{city.country}}</strong></span>
 	        </span>
+    </div>
+    <div id="city_weather">
+        <div class="coord" style="padding-top:15px; padding-bottom: 15px; width:100%; margin:0; text-align: center; font-size: medium; color: #292929">
+            <span>Lat: <strong style="color: #B31F24;">{{city.coord.lat}}</strong> and Lon: <strong style="color: #B31F24;">{{city.coord.lon}}</strong></span>
         </div>
-        <div id="city_weather">
-            <div class="coord" style="padding-top:15px; padding-bottom: 15px; width:100%; margin:0; text-align: center; font-size: medium; color: #292929">
-                 <span>Lat: <strong style="color: #B31F24;">{{city.coord.lat}}</strong> and Lon: <strong style="color: #B31F24;">{{city.coord.lon}}</strong></span>
-            </div>
-            <br>
-            <div class="week_temps" style="padding-top:15px; padding-bottom: 15px; width:100%; margin:0 auto; background-color: #292929; color: white; text-align: center; font-size: x-large">
-                <span>5 DAYS FORECAST</span>
-            </div>
+        <br>
+        <div class="week_temps" style="padding-top:15px; padding-bottom: 15px; width:100%; margin:0 auto; background-color: #292929; color: white; text-align: center; font-size: x-large">
+            <span>5 DAYS FORECAST</span>
+        </div>
 
-            <div class="row" style="width:800px; margin:0 auto;">
-                <ul style="list-style: none; ">
-                   <li style="width: auto; float: left; border: 1px solid #292929; padding: 10px; background-color: #484850; color: white"><div class="col-md-15 col-xs-3">
-                        {{#with list.[0]}}
-                            <div style="padding: 5px;">
-                                <span>Day: <strong style="color: #B31F24; text-decoration: underline">Monday </strong></span>
-                            </div>
-                            <div style="padding: 5px; border-bottom: 1px solid #B31F24">
-                                <span> {{weather.icon}} </span>
-                            </div>
-                            <div style="padding: 5px; border-bottom: 1px solid #292929">
-                                <span>Temp: {{main.temp}} &#8451;</span>
-                            </div>
-                            <div style="padding: 5px; border-bottom: 1px solid #292929">
-                                <span>Min: {{main.temp_min}} &#8451;</span>
-                            </div>
-                            <div style="padding: 5px; border-bottom: 1px solid #292929">
-                                <span>Max: {{main.temp_max}} &#8451;</span>
-                            </div>
-                            <div style="padding: 5px; border-bottom: 1px solid #292929">
-                                <span>Humidity: {{main.humidity}} %</span>
-                            </div>
-                            <div style="padding: 5px; border-bottom: 1px solid #292929">
-                                <span>Weather: {{weather.main}} </span>
-                            </div>
-                            <div style="padding: 5px;">
-                                <span>Description: {{weather.description}} </span>
-                            </div>
-                        {{/with}}
+        <div class="row" style="width:750px; margin:0 auto;">
+            <ul style="list-style: none; ">
+                <li style="width: auto; float: left; border: 1px solid #292929; padding: 10px; background-color: #484850; color: white"><div class="col-md-15 col-xs-3">
+                    {{#with list.[0]}}
+                        <div style="padding: 5px; border-bottom: 1px solid #B31F24">
+                            <span>Day: <strong style="color: #B31F24; text-decoration: underline;">Monday </strong></span>
+                        </div>
+                        <div style="padding: 5px; border-bottom: 1px solid #292929">
+                            <span>Temp: {{main.temp}} &#8451;</span>
+                        </div>
+                        <div style="padding: 5px; border-bottom: 1px solid #292929">
+                            <span>Min: {{main.temp_min}} &#8451;</span>
+                        </div>
+                        <div style="padding: 5px; border-bottom: 1px solid #292929">
+                            <span>Max: {{main.temp_max}} &#8451;</span>
+                        </div>
+                        <div style="padding: 5px;">
+                            <span>Humidity: {{main.humidity}} %</span>
+                        </div>
+                            <!--{{/with}}-->
                 </div></li>
-                        <li style="width: auto; float: left; border: 1px solid #292929; padding: 10px"><div class="col-md-15 col-xs-3">
-                        {{#with list.[1]}}
-                            <div style="padding: 5px;">
-                                <span>Day: <strong style="color: #B31F24;">Tuesday </strong></span>
-                            </div>
-                            <div style="padding: 5px; border-bottom: 1px solid #292929">
-                                <span> {{weather.icon}} </span>
-                            </div>
-                            <div style="padding: 5px; border-bottom: 1px solid #292929">
-                                <span>Temp: {{main.temp}} &#8451;</span>
-                            </div>
-                            <div style="padding: 5px; border-bottom: 1px solid #292929">
-                                <span>Min: {{main.temp_min}} &#8451;</span>
-                            </div>
-                            <div style="padding: 5px; border-bottom: 1px solid #292929">
-                                <span>Max: {{main.temp_max}} &#8451;</span>
-                            </div>
-                            <div style="padding: 5px; border-bottom: 1px solid #292929">
-                                <span>Humidity: {{main.humidity}} %</span>
-                            </div>
-                            <div style="padding: 5px; border-bottom: 1px solid #292929">
-                                <span>Weather: {{weather.main}} </span>
-                            </div>
-                            <div style="padding: 5px;">
-                                <span>Description: {{weather.description}} </span>
-                            </div>
-                        {{/with}}
-                    </div></li>
-                    <li style="width: auto; float: left; border: 1px solid #292929; padding: 10px;"><div class="col-md-15 col-xs-3">
-                        {{#with list.[2]}}
-                            <div style="padding: 5px;">
-                                <span>Day: <strong style="color: #B31F24;">Wednesday </strong></span>
-                            </div>
-                            <div style="padding: 5px; border-bottom: 1px solid #292929">
-                                <span> {{weather.icon}} </span>
-                            </div>
-                            <div style="padding: 5px; border-bottom: 1px solid #292929">
-                                <span>Temp: {{main.temp}} &#8451;</span>
-                            </div>
-                            <div style="padding: 5px; border-bottom: 1px solid #292929">
-                                <span>Min: {{main.temp_min}} &#8451;</span>
-                            </div>
-                            <div style="padding: 5px; border-bottom: 1px solid #292929">
-                                <span>Max: {{main.temp_max}} &#8451;</span>
-                            </div>
-                            <div style="padding: 5px; border-bottom: 1px solid #292929">
-                                <span>Humidity: {{main.humidity}} %</span>
-                            </div>
-                            <div style="padding: 5px; border-bottom: 1px solid #292929">
-                                <span>Weather: {{weather.main}} </span>
-                            </div>
-                            <div style="padding: 5px;">
-                                <span>Description: {{weather.description}} </span>
-                            </div>
-                        {{/with}}
-                    </div></li>
-                    <li style="width: auto; float: left; border: 1px solid #292929; padding: 10px"><div class="col-md-15 col-xs-3">
-                        {{#with list.[3]}}
-                            <div style="padding: 5px;">
-                                <span>Day: <strong style="color: #B31F24;">Thursday </strong></span>
-                            </div>
-                            <div style="padding: 5px; border-bottom: 1px solid #292929">
-                                <span> {{weather.icon}} </span>
-                            </div>
-                            <div style="padding: 5px; border-bottom: 1px solid #292929">
-                                <span>Temp: {{main.temp}} &#8451;</span>
-                            </div>
-                            <div style="padding: 5px; border-bottom: 1px solid #292929">
-                                <span>Min: {{main.temp_min}} &#8451;</span>
-                            </div>
-                            <div style="padding: 5px; border-bottom: 1px solid #292929">
-                                <span>Max: {{main.temp_max}} &#8451;</span>
-                            </div>
-                            <div style="padding: 5px; border-bottom: 1px solid #292929">
-                                <span>Humidity: {{main.humidity}} %</span>
-                            </div>
-                            <div style="padding: 5px; border-bottom: 1px solid #292929">
-                                <span>Weather: {{weather.main}} </span>
-                            </div>
-                            <div style="padding: 5px;">
-                                <span>Description: {{weather.description}} </span>
-                            </div>
-                        {{/with}}
-                    </div></li>
-                    <li style="width: auto; float: left; border: 1px solid #292929; padding: 10px"><div class="col-md-15 col-xs-3">
-                        {{#with list.[4]}}
-                            <div style="padding: 5px;">
-                                <span>Day: <strong style="color: #B31F24;">Friday </strong></span>
-                            </div>
-                            <div style="padding: 5px; border-bottom: 1px solid #292929">
-                                <span> {{weather.icon}} </span>
-                            </div>
-                            <div style="padding: 5px; border-bottom: 1px solid #292929">
-                                <span>Temp: {{main.temp}} &#8451;</span>
-                            </div>
-                            <div style="padding: 5px; border-bottom: 1px solid #292929">
-                                <span>Min: {{main.temp_min}} &#8451;</span>
-                            </div>
-                            <div style="padding: 5px; border-bottom: 1px solid #292929">
-                                <span>Max: {{main.temp_max}} &#8451;</span>
-                            </div>
-                            <div style="padding: 5px; border-bottom: 1px solid #292929">
-                                <span>Humidity: {{main.humidity}} %</span>
-                            </div>
-                            <div style="padding: 5px; border-bottom: 1px solid #292929">
-                                <span>Weather: {{weather.main}} </span>
-                            </div>
-                            <div style="padding: 5px;">
-                                <span>Description: {{weather.description}} </span>
-                            </div>
-                        {{/with}}
-                    </div></li>
-                </ul>
-            </div>
+                <li style="width: auto; float: left; border: 1px solid #292929; padding: 10px"><div class="col-md-15 col-xs-3">
+                    {{#with list.[1]}}
+                        <div style="padding: 5px; border-bottom: 1px solid #B31F24">
+                            <span>Day: <strong style="color: #B31F24;">Tuesday </strong></span>
+                        </div>
+                        <div style="padding: 5px; border-bottom: 1px solid #292929">
+                            <span>Temp: {{main.temp}} &#8451;</span>
+                        </div>
+                        <div style="padding: 5px; border-bottom: 1px solid #292929">
+                            <span>Min: {{main.temp_min}} &#8451;</span>
+                        </div>
+                        <div style="padding: 5px; border-bottom: 1px solid #292929">
+                            <span>Max: {{main.temp_max}} &#8451;</span>
+                        </div>
+                        <div style="padding: 5px;">
+                            <span>Humidity: {{main.humidity}} %</span>
+                        </div>
+                    {{/with}}
+                </div></li>
+                <li style="width: auto; float: left; border: 1px solid #292929; padding: 10px;"><div class="col-md-15 col-xs-3">
+                    {{#with list.[2]}}
+                        <div style="padding: 5px; border-bottom: 1px solid #B31F24">
+                            <span>Day: <strong style="color: #B31F24;">Wednesday </strong></span>
+                        </div>
+                        <div style="padding: 5px; border-bottom: 1px solid #292929">
+                            <span>Temp: {{main.temp}} &#8451;</span>
+                        </div>
+                        <div style="padding: 5px; border-bottom: 1px solid #292929">
+                            <span>Min: {{main.temp_min}} &#8451;</span>
+                        </div>
+                        <div style="padding: 5px; border-bottom: 1px solid #292929">
+                            <span>Max: {{main.temp_max}} &#8451;</span>
+                        </div>
+                        <div style="padding: 5px;">
+                            <span>Humidity: {{main.humidity}} %</span>
+                        </div>
+                    {{/with}}
+                </div></li>
+                <li style="width: auto; float: left; border: 1px solid #292929; padding: 10px"><div class="col-md-15 col-xs-3">
+                    {{#with list.[3]}}
+                        <div style="padding: 5px; border-bottom: 1px solid #B31F24">
+                            <span>Day: <strong style="color: #B31F24;">Thursday </strong></span>
+                        </div>
+                        <div style="padding: 5px; border-bottom: 1px solid #292929">
+                            <span>Temp: {{main.temp}} &#8451;</span>
+                        </div>
+                        <div style="padding: 5px; border-bottom: 1px solid #292929">
+                            <span>Min: {{main.temp_min}} &#8451;</span>
+                        </div>
+                        <div style="padding: 5px; border-bottom: 1px solid #292929">
+                            <span>Max: {{main.temp_max}} &#8451;</span>
+                        </div>
+                        <div style="padding: 5px;">
+                            <span>Humidity: {{main.humidity}} %</span>
+                        </div>
+                    {{/with}}
+                </div></li>
+                <li style="width: auto; float: left; border: 1px solid #292929; padding: 10px"><div class="col-md-15 col-xs-3">
+                    {{#with list.[4]}}
+                        <div style="padding: 5px; border-bottom: 1px solid #B31F24">
+                            <span>Day: <strong style="color: #B31F24;">Friday </strong></span>
+                        </div>
+                        <div style="padding: 5px; border-bottom: 1px solid #292929">
+                            <span>Temp: {{main.temp}} &#8451;</span>
+                        </div>
+                        <div style="padding: 5px; border-bottom: 1px solid #292929">
+                            <span>Min: {{main.temp_min}} &#8451;</span>
+                        </div>
+                        <div style="padding: 5px; border-bottom: 1px solid #292929">
+                            <span>Max: {{main.temp_max}} &#8451;</span>
+                        </div>
+                        <div style="padding: 5px;">
+                            <span>Humidity: {{main.humidity}} %</span>
+                        </div>
+                    {{/with}}
+                </div></li>
+            </ul>
         </div>
+    </div>
 </div>
